@@ -1,10 +1,8 @@
-__author__ = 'jszheng'
-
 import sys
 from antlr4 import *
 from antlr4.InputStream import InputStream
-from LabeledExprLexer import LabeledExprLexer
-from LabeledExprParser import LabeledExprParser
+from calculadoraLexer import calculadoraLexer
+from calculadoraParser import calculadoraParser
 from MyVisitor import MyVisitor
 
 if __name__ == '__main__':
@@ -13,13 +11,10 @@ if __name__ == '__main__':
     else:
         input_stream = InputStream(sys.stdin.readline())
 
-    lexer = LabeledExprLexer(input_stream)
+    lexer = calculadoraLexer(input_stream)
     token_stream = CommonTokenStream(lexer)
-    parser = LabeledExprParser(token_stream)
+    parser = calculadoraParser(token_stream)
     tree = parser.prog()
-
-    #lisp_tree_str = tree.toStringTree(recog=parser)
-    #print(lisp_tree_str)
 
     visitor = MyVisitor()
     visitor.visit(tree)

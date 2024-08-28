@@ -1,46 +1,39 @@
-__author__ = 'jszheng'
-
-from LabeledExprVisitor import LabeledExprVisitor
-from LabeledExprParser import LabeledExprParser
+from calculadoraVisitor import calculadoraVisitor
+from calculadoraParser import calculadoraParser
 
 
-class MyVisitor(LabeledExprVisitor):
-    def __init__(self):
-        self.memory = {}
+class MyVisitor(calculadoraVisitor):
 
-    def visitAssign(self, ctx):
-        name = ctx.ID().getText()
-        value = self.visit(ctx.expr())
-        self.memory[name] = value
-        return value
-
-    def visitPrintExpr(self, ctx):
+    def visitPrintExpr(self, ctx: calculadoraParser.PrintExprContext):
         value = self.visit(ctx.expr())
         print(value)
-        return 0
+        return value
 
     def visitInt(self, ctx):
-        return ctx.INT().getText()
+        return int(ctx.INT().getText())
 
-    def visitId(self, ctx):
-        name = ctx.ID().getText()
-        if name in self.memory:
-            return self.memory[name]
-        return 0
+    def visitFloat(self, ctx):
+        return float(ctx.FLOAT().getText())
 
     def visitMulDiv(self, ctx):
-        left = int(self.visit(ctx.expr(0)))
-        right = int(self.visit(ctx.expr(1)))
-        if ctx.op.type == LabeledExprParser.MUL:
+        left = self.visit(ctx.expr(0))
+        right = self.visit(ctx.expr(1))
+        if ctx.op.type == calculadoraParser.MUL:
             return left * right
         return left / right
+    
+    def visitAbs(self,ctx):
+        value = self.visit(ctx.expr())
+        return abs((value))
+    
 
-    def visitAddSub(self, ctx):
-        left = int(self.visit(ctx.expr(0)))
-        right = int(self.visit(ctx.expr(1)))
-        if ctx.op.type == LabeledExprParser.ADD:
+    def visitAddSub(self, ctx: calculadoraParser.AddSubContext):
+        left = self.visit(ctx.expr(0))
+        right = self.visit(ctx.expr(1))
+        if ctx.op.type == calculadoraParser.ADD:
             return left + right
-        return left - right
+        else:  # ctx.op.type == calculadoraParser.SUB
+            return left - right
 
     def visitParens(self, ctx):
         return self.visit(ctx.expr())
