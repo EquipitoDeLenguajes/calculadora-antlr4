@@ -1,4 +1,4 @@
-// Generated from //wsl.localhost/Ubuntu/home/linky/Universidad/calculadora-antlr4/04-Calc/LabeledExpr.g4 by ANTLR 4.13.1
+// Generated from //wsl.localhost/Ubuntu/home/linky/Universidad/calculadora-antlr4/04-Calc/calculadora.g4 by ANTLR 4.13.1
 import org.antlr.v4.runtime.atn.*;
 import org.antlr.v4.runtime.dfa.DFA;
 import org.antlr.v4.runtime.*;
@@ -9,7 +9,7 @@ import java.util.Iterator;
 import java.util.ArrayList;
 
 @SuppressWarnings({"all", "warnings", "unchecked", "unused", "cast", "CheckReturnValue"})
-public class LabeledExprParser extends Parser {
+public class calculadoraParser extends Parser {
 	static { RuntimeMetaData.checkVersion("4.13.1", RuntimeMetaData.VERSION); }
 
 	protected static final DFA[] _decisionToDFA;
@@ -74,7 +74,7 @@ public class LabeledExprParser extends Parser {
 	}
 
 	@Override
-	public String getGrammarFileName() { return "LabeledExpr.g4"; }
+	public String getGrammarFileName() { return "calculadora.g4"; }
 
 	@Override
 	public String[] getRuleNames() { return ruleNames; }
@@ -85,7 +85,7 @@ public class LabeledExprParser extends Parser {
 	@Override
 	public ATN getATN() { return _ATN; }
 
-	public LabeledExprParser(TokenStream input) {
+	public calculadoraParser(TokenStream input) {
 		super(input);
 		_interp = new ParserATNSimulator(this,_ATN,_decisionToDFA,_sharedContextCache);
 	}
@@ -152,7 +152,7 @@ public class LabeledExprParser extends Parser {
 	}
 	@SuppressWarnings("CheckReturnValue")
 	public static class BlankContext extends StatContext {
-		public TerminalNode NEWLINE() { return getToken(LabeledExprParser.NEWLINE, 0); }
+		public TerminalNode NEWLINE() { return getToken(calculadoraParser.NEWLINE, 0); }
 		public BlankContext(StatContext ctx) { copyFrom(ctx); }
 	}
 	@SuppressWarnings("CheckReturnValue")
@@ -160,7 +160,7 @@ public class LabeledExprParser extends Parser {
 		public ExprContext expr() {
 			return getRuleContext(ExprContext.class,0);
 		}
-		public TerminalNode NEWLINE() { return getToken(LabeledExprParser.NEWLINE, 0); }
+		public TerminalNode NEWLINE() { return getToken(calculadoraParser.NEWLINE, 0); }
 		public PrintExprContext(StatContext ctx) { copyFrom(ctx); }
 	}
 
@@ -228,9 +228,9 @@ public class LabeledExprParser extends Parser {
 	}
 	@SuppressWarnings("CheckReturnValue")
 	public static class AbsContext extends ExprContext {
-		public List<TerminalNode> ABS() { return getTokens(LabeledExprParser.ABS); }
+		public List<TerminalNode> ABS() { return getTokens(calculadoraParser.ABS); }
 		public TerminalNode ABS(int i) {
-			return getToken(LabeledExprParser.ABS, i);
+			return getToken(calculadoraParser.ABS, i);
 		}
 		public ExprContext expr() {
 			return getRuleContext(ExprContext.class,0);
@@ -246,8 +246,8 @@ public class LabeledExprParser extends Parser {
 		public ExprContext expr(int i) {
 			return getRuleContext(ExprContext.class,i);
 		}
-		public TerminalNode MUL() { return getToken(LabeledExprParser.MUL, 0); }
-		public TerminalNode DIV() { return getToken(LabeledExprParser.DIV, 0); }
+		public TerminalNode MUL() { return getToken(calculadoraParser.MUL, 0); }
+		public TerminalNode DIV() { return getToken(calculadoraParser.DIV, 0); }
 		public MulDivContext(ExprContext ctx) { copyFrom(ctx); }
 	}
 	@SuppressWarnings("CheckReturnValue")
@@ -259,18 +259,18 @@ public class LabeledExprParser extends Parser {
 		public ExprContext expr(int i) {
 			return getRuleContext(ExprContext.class,i);
 		}
-		public TerminalNode ADD() { return getToken(LabeledExprParser.ADD, 0); }
-		public TerminalNode SUB() { return getToken(LabeledExprParser.SUB, 0); }
+		public TerminalNode ADD() { return getToken(calculadoraParser.ADD, 0); }
+		public TerminalNode SUB() { return getToken(calculadoraParser.SUB, 0); }
 		public AddSubContext(ExprContext ctx) { copyFrom(ctx); }
 	}
 	@SuppressWarnings("CheckReturnValue")
 	public static class FloatContext extends ExprContext {
-		public TerminalNode FLOAT() { return getToken(LabeledExprParser.FLOAT, 0); }
+		public TerminalNode FLOAT() { return getToken(calculadoraParser.FLOAT, 0); }
 		public FloatContext(ExprContext ctx) { copyFrom(ctx); }
 	}
 	@SuppressWarnings("CheckReturnValue")
 	public static class IntContext extends ExprContext {
-		public TerminalNode INT() { return getToken(LabeledExprParser.INT, 0); }
+		public TerminalNode INT() { return getToken(calculadoraParser.INT, 0); }
 		public IntContext(ExprContext ctx) { copyFrom(ctx); }
 	}
 
