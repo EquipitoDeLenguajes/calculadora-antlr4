@@ -42,7 +42,7 @@ antlr4 -visitor -Dlanguage=Python3 LabeledExpr.g4
 python3 calc.py t.expr
 ```
 
-### Step 4: Use your own expression use:
+### Step 4: Use your own expression:
 
 ```sh
 python3 calc.py
