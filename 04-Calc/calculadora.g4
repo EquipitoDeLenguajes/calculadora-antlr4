@@ -1,4 +1,4 @@
-grammar calculadora; // rename to distinguish from Expr.g4
+grammar calculadora; // Always the same as the filename
 
 prog:   stat+ ;
 
@@ -14,12 +14,12 @@ expr:   expr op=('*'|'/') expr      # MulDiv
     |   '(' expr ')'                # parens
     ;
 
-MUL :   '*' ; // assigns token name to '*' used above in grammar
+MUL :   '*' ;
 DIV :   '/' ;
 ADD :   '+' ;
 SUB :   '-' ;
 ABS :   '|' ;
 INT :   [-]?[0-9]+ ;
-FLOAT : [0-9]+ '.' [0-9]* | '.' [0-9]+ ;          // match integers
-NEWLINE:'\r'? '\n' ;     // return newlines to parser (is end-statement signal)
-WS  :   [ \t]+ -> skip ; // toss out whitespace
+FLOAT : [0-9]+ '.' [0-9]+ | '.' [0-9]+ ;        
+NEWLINE:'\r'? '\n' ;     
+WS  :   [ \t]+ -> skip ; 

@@ -20,6 +20,8 @@ class MyVisitor(calculadoraVisitor):
         right = self.visit(ctx.expr(1))
         if ctx.op.type == calculadoraParser.MUL:
             return left * right
+        if right == 0:
+            return "División por cero no aceptada"
         return left / right
     
     def visitAbs(self,ctx):
@@ -32,7 +34,7 @@ class MyVisitor(calculadoraVisitor):
         right = self.visit(ctx.expr(1))
         if ctx.op.type == calculadoraParser.ADD:
             return left + right
-        else:  # ctx.op.type == calculadoraParser.SUB
+        else:
             return left - right
 
     def visitParens(self, ctx):
