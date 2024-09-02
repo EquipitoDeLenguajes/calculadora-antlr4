@@ -23,6 +23,13 @@ public interface calculadoraVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitPrintExpr(calculadoraParser.PrintExprContext ctx);
 	/**
+	 * Visit a parse tree produced by the {@code assign}
+	 * labeled alternative in {@link calculadoraParser#stat}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitAssign(calculadoraParser.AssignContext ctx);
+	/**
 	 * Visit a parse tree produced by the {@code blank}
 	 * labeled alternative in {@link calculadoraParser#stat}.
 	 * @param ctx the parse tree
@@ -64,6 +71,13 @@ public interface calculadoraVisitor<T> extends ParseTreeVisitor<T> {
 	 * @return the visitor result
 	 */
 	T visitAddSub(calculadoraParser.AddSubContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code id}
+	 * labeled alternative in {@link calculadoraParser#expr}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitId(calculadoraParser.IdContext ctx);
 	/**
 	 * Visit a parse tree produced by the {@code float}
 	 * labeled alternative in {@link calculadoraParser#expr}.

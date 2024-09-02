@@ -29,6 +29,18 @@ public interface calculadoraListener extends ParseTreeListener {
 	 */
 	void exitPrintExpr(calculadoraParser.PrintExprContext ctx);
 	/**
+	 * Enter a parse tree produced by the {@code assign}
+	 * labeled alternative in {@link calculadoraParser#stat}.
+	 * @param ctx the parse tree
+	 */
+	void enterAssign(calculadoraParser.AssignContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code assign}
+	 * labeled alternative in {@link calculadoraParser#stat}.
+	 * @param ctx the parse tree
+	 */
+	void exitAssign(calculadoraParser.AssignContext ctx);
+	/**
 	 * Enter a parse tree produced by the {@code blank}
 	 * labeled alternative in {@link calculadoraParser#stat}.
 	 * @param ctx the parse tree
@@ -100,6 +112,18 @@ public interface calculadoraListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitAddSub(calculadoraParser.AddSubContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code id}
+	 * labeled alternative in {@link calculadoraParser#expr}.
+	 * @param ctx the parse tree
+	 */
+	void enterId(calculadoraParser.IdContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code id}
+	 * labeled alternative in {@link calculadoraParser#expr}.
+	 * @param ctx the parse tree
+	 */
+	void exitId(calculadoraParser.IdContext ctx);
 	/**
 	 * Enter a parse tree produced by the {@code float}
 	 * labeled alternative in {@link calculadoraParser#expr}.

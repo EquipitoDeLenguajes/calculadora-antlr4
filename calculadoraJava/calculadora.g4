@@ -3,6 +3,7 @@ grammar calculadora;
 prog:   stat+ ;
 
 stat:   expr NEWLINE                # printExpr
+    |   ID '=' expr NEWLINE         # assign
     |   NEWLINE                     # blank
     ;
 
@@ -12,15 +13,17 @@ expr:   '-' expr                    # Negative
     |   ABS expr ABS                # Abs
     |   FLOAT                       # float
     |   INT                         # int
+    |   ID                          # id
     |   '(' expr ')'                # parens
     ;
 
-MUL :   '*' ;
-DIV :   '/' ;
-ADD :   '+' ;
-SUB :   '-' ;
-ABS :   '|' ;
-FLOAT : [0-9]+ '.' [0-9]* | '.' [0-9]+ ;  // match floating-point numbers
-INT :   [0-9]+ ;                          // match integers
-NEWLINE:'\r'? '\n' ;
-WS  :   [ \t]+ -> skip ;
+MUL     : '*' ;
+DIV     : '/' ;
+ADD     : '+' ;
+SUB     : '-' ;
+ABS     : '|' ;
+FLOAT   : [0-9]+ '.' [0-9]* | '.' [0-9]+ ;  // match floating-point numbers
+INT     : [0-9]+ ;                          // match integers
+ID      : [a-zA-Z] [a-zA-Z0-9]* ;           // match variable names
+NEWLINE : '\r'? '\n' ;
+WS      : [ \t]+ -> skip ;

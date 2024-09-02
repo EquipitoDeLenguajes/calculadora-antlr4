@@ -1,7 +1,28 @@
+import java.util.HashMap;
+import java.util.Map;
+
 import org.antlr.v4.runtime.tree.AbstractParseTreeVisitor;
 
 public class MyVisitor extends calculadoraBaseVisitor<Double> {
+    private Map<String, Double> memory = new HashMap<>();
 
+    @Override
+    public Double visitAssign(calculadoraParser.AssignContext ctx) {
+        String id = ctx.ID().getText();
+        Double value = visit(ctx.expr());
+        memory.put(id, value);
+        return value;
+    }
+
+    @Override
+    public Double visitId(calculadoraParser.IdContext ctx) {
+        String id = ctx.ID().getText();
+        if (memory.containsKey(id)) {
+            return memory.get(id);
+        }
+        return 0.0;
+    }
+    
     @Override
     public Double visitPrintExpr(calculadoraParser.PrintExprContext ctx) {
         Double value = visit(ctx.expr());
@@ -26,7 +47,12 @@ public class MyVisitor extends calculadoraBaseVisitor<Double> {
         if (ctx.op.getType() == calculadoraParser.MUL) {
             return left * right;
         } else {
-            return left / right;
+            if (right == 0) {
+                System.out.print("Error: division por ");
+                return 0.0;
+            } else {
+                return left / right;
+            }
         }
     }
 
