@@ -30,13 +30,6 @@ public interface calculadoraVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitAssign(calculadoraParser.AssignContext ctx);
 	/**
-	 * Visit a parse tree produced by the {@code blank}
-	 * labeled alternative in {@link calculadoraParser#stat}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitBlank(calculadoraParser.BlankContext ctx);
-	/**
 	 * Visit a parse tree produced by the {@code parens}
 	 * labeled alternative in {@link calculadoraParser#expr}.
 	 * @param ctx the parse tree

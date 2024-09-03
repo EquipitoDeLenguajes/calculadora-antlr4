@@ -52,18 +52,6 @@ public class calculadoraBaseListener implements calculadoraListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterBlank(calculadoraParser.BlankContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitBlank(calculadoraParser.BlankContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
 	@Override public void enterParens(calculadoraParser.ParensContext ctx) { }
 	/**
 	 * {@inheritDoc}

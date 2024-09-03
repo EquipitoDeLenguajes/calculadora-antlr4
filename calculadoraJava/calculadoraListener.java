@@ -41,18 +41,6 @@ public interface calculadoraListener extends ParseTreeListener {
 	 */
 	void exitAssign(calculadoraParser.AssignContext ctx);
 	/**
-	 * Enter a parse tree produced by the {@code blank}
-	 * labeled alternative in {@link calculadoraParser#stat}.
-	 * @param ctx the parse tree
-	 */
-	void enterBlank(calculadoraParser.BlankContext ctx);
-	/**
-	 * Exit a parse tree produced by the {@code blank}
-	 * labeled alternative in {@link calculadoraParser#stat}.
-	 * @param ctx the parse tree
-	 */
-	void exitBlank(calculadoraParser.BlankContext ctx);
-	/**
 	 * Enter a parse tree produced by the {@code parens}
 	 * labeled alternative in {@link calculadoraParser#expr}.
 	 * @param ctx the parse tree

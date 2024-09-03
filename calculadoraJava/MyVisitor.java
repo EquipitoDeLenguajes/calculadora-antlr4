@@ -11,7 +11,7 @@ public class MyVisitor extends calculadoraBaseVisitor<Double> {
         String id = ctx.ID().getText();
         Double value = visit(ctx.expr());
         memory.put(id, value);
-        return value;
+        return null;
     }
 
     @Override
