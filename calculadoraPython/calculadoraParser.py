@@ -10,7 +10,7 @@ else:
 
 def serializedATN():
     return [
-        4,1,13,45,2,0,7,0,2,1,7,1,2,2,7,2,1,0,4,0,8,8,0,11,0,12,0,9,1,1,
+        4,1,12,45,2,0,7,0,2,1,7,1,2,2,7,2,1,0,4,0,8,8,0,11,0,12,0,9,1,1,
         1,1,1,1,1,1,3,1,16,8,1,1,2,1,2,1,2,1,2,1,2,1,2,1,2,1,2,1,2,1,2,1,
         2,1,2,1,2,1,2,3,2,32,8,2,1,2,1,2,1,2,1,2,1,2,1,2,5,2,40,8,2,10,2,
         12,2,43,9,2,1,2,0,1,4,3,0,2,4,0,2,1,0,4,5,1,0,6,7,50,0,7,1,0,0,0,
@@ -42,7 +42,7 @@ class calculadoraParser ( Parser ):
 
     symbolicNames = [ "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
                       "MUL", "DIV", "ADD", "SUB", "ABS", "FLOAT", "INT", 
-                      "ID", "NEWLINE", "WS" ]
+                      "ID", "WS" ]
 
     RULE_prog = 0
     RULE_stat = 1
@@ -62,8 +62,7 @@ class calculadoraParser ( Parser ):
     FLOAT=9
     INT=10
     ID=11
-    NEWLINE=12
-    WS=13
+    WS=12
 
     def __init__(self, input:TokenStream, output:TextIO = sys.stdout):
         super().__init__(input, output)

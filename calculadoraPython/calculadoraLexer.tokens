@@ -9,8 +9,7 @@ ABS=8
 FLOAT=9
 INT=10
 ID=11
-NEWLINE=12
-WS=13
+WS=12
 '='=1
 '('=2
 ')'=3
