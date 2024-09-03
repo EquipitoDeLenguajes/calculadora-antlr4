@@ -24,5 +24,4 @@ ABS     : '|' ;
 FLOAT   : [0-9]+ '.' [0-9]* | '.' [0-9]+ ;  // match floating-point numbers
 INT     : [0-9]+ ;                          // match integers
 ID      : [a-zA-Z] [a-zA-Z0-9]* ;           // match variable names
-NEWLINE : '\r'? '\n' ;
 WS      : [ \t]+ -> skip ;

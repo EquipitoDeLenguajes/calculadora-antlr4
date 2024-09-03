@@ -24,13 +24,17 @@ antlr4 -visitor calculadora.g4
 javac *.java
 ```
 
-#### Step 3: Run the calculator:
+#### Step 3: Run a test:
+
+```sh
+java Calculator t.expr
+```
+
+#### Step 4: Run the calculator and use your own expresions:
 
 ```sh
 java Calculator
 ```
-
-And write the expression later.
 
 **Note**: Make sure to have `Java` installed on your linux distribution.
 
@@ -72,7 +76,13 @@ pip install -r requirements.txt
 antlr4 -visitor -Dlanguage=Python3 LabeledExpr.g4
 ```
 
-#### Step 3: Run the calculator:
+#### Step 3: Run a test:
+
+```sh
+python3 calc.py
+```
+
+#### Step 4: Run the calculator and use your own expresions:
 
 ```sh
 python3 calc.py
