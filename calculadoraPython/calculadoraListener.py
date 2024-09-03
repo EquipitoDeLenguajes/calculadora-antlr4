@@ -26,21 +26,12 @@ class calculadoraListener(ParseTreeListener):
         pass
 
 
-    # Enter a parse tree produced by calculadoraParser#blank.
-    def enterBlank(self, ctx:calculadoraParser.BlankContext):
+    # Enter a parse tree produced by calculadoraParser#assign.
+    def enterAssign(self, ctx:calculadoraParser.AssignContext):
         pass
 
-    # Exit a parse tree produced by calculadoraParser#blank.
-    def exitBlank(self, ctx:calculadoraParser.BlankContext):
-        pass
-
-
-    # Enter a parse tree produced by calculadoraParser#AbsExpr.
-    def enterAbsExpr(self, ctx:calculadoraParser.AbsExprContext):
-        pass
-
-    # Exit a parse tree produced by calculadoraParser#AbsExpr.
-    def exitAbsExpr(self, ctx:calculadoraParser.AbsExprContext):
+    # Exit a parse tree produced by calculadoraParser#assign.
+    def exitAssign(self, ctx:calculadoraParser.AssignContext):
         pass
 
 
@@ -50,6 +41,15 @@ class calculadoraListener(ParseTreeListener):
 
     # Exit a parse tree produced by calculadoraParser#parens.
     def exitParens(self, ctx:calculadoraParser.ParensContext):
+        pass
+
+
+    # Enter a parse tree produced by calculadoraParser#Abs.
+    def enterAbs(self, ctx:calculadoraParser.AbsContext):
+        pass
+
+    # Exit a parse tree produced by calculadoraParser#Abs.
+    def exitAbs(self, ctx:calculadoraParser.AbsContext):
         pass
 
 
@@ -77,6 +77,15 @@ class calculadoraListener(ParseTreeListener):
 
     # Exit a parse tree produced by calculadoraParser#AddSub.
     def exitAddSub(self, ctx:calculadoraParser.AddSubContext):
+        pass
+
+
+    # Enter a parse tree produced by calculadoraParser#id.
+    def enterId(self, ctx:calculadoraParser.IdContext):
+        pass
+
+    # Exit a parse tree produced by calculadoraParser#id.
+    def exitId(self, ctx:calculadoraParser.IdContext):
         pass
 
 

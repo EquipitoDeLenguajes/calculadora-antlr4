@@ -19,18 +19,18 @@ class calculadoraVisitor(ParseTreeVisitor):
         return self.visitChildren(ctx)
 
 
-    # Visit a parse tree produced by calculadoraParser#blank.
-    def visitBlank(self, ctx:calculadoraParser.BlankContext):
-        return self.visitChildren(ctx)
-
-
-    # Visit a parse tree produced by calculadoraParser#AbsExpr.
-    def visitAbsExpr(self, ctx:calculadoraParser.AbsExprContext):
+    # Visit a parse tree produced by calculadoraParser#assign.
+    def visitAssign(self, ctx:calculadoraParser.AssignContext):
         return self.visitChildren(ctx)
 
 
     # Visit a parse tree produced by calculadoraParser#parens.
     def visitParens(self, ctx:calculadoraParser.ParensContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by calculadoraParser#Abs.
+    def visitAbs(self, ctx:calculadoraParser.AbsContext):
         return self.visitChildren(ctx)
 
 
@@ -46,6 +46,11 @@ class calculadoraVisitor(ParseTreeVisitor):
 
     # Visit a parse tree produced by calculadoraParser#AddSub.
     def visitAddSub(self, ctx:calculadoraParser.AddSubContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by calculadoraParser#id.
+    def visitId(self, ctx:calculadoraParser.IdContext):
         return self.visitChildren(ctx)
 
 
